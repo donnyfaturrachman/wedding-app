@@ -4,7 +4,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <meta name="description" content="Undangan Pernikahan Syarah & Donny">
+    <meta name="description" content="Undangan Pernikahan Syarah & Donny Bekasi, 27 Agustus 2023">
     <meta name="author" content="Syarah & Donny">
     <meta name="keywords" content="wedding">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
@@ -14,15 +14,15 @@
     <link rel="icon" type="image/png" sizes="16x16" href="{{ asset('favicon/favicon-16x16.png') }}">
     <link rel="apple-touch-icon" type="image/png" sizes="180x180" href="{{ asset('favicon/apple-touch-icon.png') }}">
     <link rel="icon" type="image/svg+xml" href="{{ asset('favicon/favicon.ico') }}">
-    <meta property="og:site_name" content="Undangan Pernikahan Syarah & Donny">
-    <meta property="og:title" content="Undangan Pernikahan Syarah & Donny" />
-    <meta property="og:description" content="Undangan Pernikahan Syarah & Donny" />
+    <meta property="og:site_name" content="Undangan Pernikahan Syarah & Donny Bekasi, 27 Agustus 2023">
+    <meta property="og:title" content="Undangan Pernikahan Syarah & Donny Bekasi, 27 Agustus 2023" />
+    <meta property="og:description" content="Undangan Pernikahan Syarah & Donny Bekasi, 27 Agustus 2023" />
     <meta property="og:image" itemprop="image" content="{{ asset('img/ogimage.jpg') }}" />
     <meta property="og:type" content="website" />
     <meta name="twitter:card" content="summary" />
     <meta name="twitter:site" content="https://syarahdonnywedding.info" />
-    <meta name="twitter:title" content="Undangan Pernikahan Syarah & Donny" />
-    <meta name="twitter:description" content="Undangan Pernikahan Syarah & Donny" />
+    <meta name="twitter:title" content="Undangan Pernikahan Syarah & Donny Bekasi, 27 Agustus 2023" />
+    <meta name="twitter:description" content="Undangan Pernikahan Syarah & Donny Bekasi, 27 Agustus 2023" />
     <meta name="twitter:image" content="{{ asset('img/ogimage.jpg') }}" />
     <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
 
@@ -53,7 +53,9 @@
     <!-- Custom styles for this template -->
     <link href="{{ asset('css/heroes.css') }}" rel="stylesheet">
     <link href="{{ asset('icons/bootstrap-icons-1.10.5/font/bootstrap-icons.min.css') }}" rel="stylesheet">
-    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css" integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/magnific-popup.min.css"
+        integrity="sha512-+EoPw+Fiwh6eSeRK7zwIKG2MA8i3rV/DGa3tdttQGgWyatG/SkncT53KHQaS5Jh9MNOT3dmFL0FjTY08And/Cw=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
 
     <style>
         body,
@@ -218,7 +220,7 @@
         #content {
             padding: 1rem;
             height: 525px;
-            overflow: scroll;
+            overflow-y: scroll;
             display: flex;
             flex-direction: column;
         }
@@ -240,9 +242,9 @@
         #content .message-in {
             margin-bottom: 1rem;
             padding: 1rem;
-            display: grid;
+            /* display: grid;
             grid-template-columns: 1fr 4fr;
-            grid-template-rows: 1fr;
+            grid-template-rows: 1fr; */
             border: 2px solid black;
             border-radius: 20px;
             background-color: rgba(255, 255, 255, 0.3);
@@ -798,18 +800,254 @@
             }
         }
     </style>
+    <style>
+        .sampul {
+            background-image: url("{{ asset('img/cover.webp') }}");
+        }
+
+        .sampul {
+            width: 100%;
+            height: 100%;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            position: fixed;
+            z-index: 9999;
+            display: flex;
+            align-items: center;
+            padding: 40px 0;
+        }
+
+
+        .sampul:before {
+            content: "";
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            /* background-color: rgba(0, 0, 0, .1); */
+            background: linear-gradient(rgb(255, 255, 255, .0), rgb(0, 0, 0, .8));
+            position: absolute;
+        }
+
+
+        .sampul .content-sampul {
+            margin: 0 auto;
+            margin-top: 100px;
+            z-index: 9999;
+        }
+
+
+        .sampul .the-wedding-of {
+            font-family: 'Playfair Display', serif;
+            font-size: 22px;
+            color: #fff;
+            text-transform: uppercase;
+            margin-top: 60px;
+        }
+
+
+        .sampul .nama-mempelai {
+            font-size: 60px;
+            color: #fff;
+            letter-spacing: 1px;
+        }
+
+
+        .sampul .kotak-tamu {
+            font-family: 'Dosis', sans-serif;
+            color: #fff;
+            width: 400px;
+            margin: 0 auto;
+            margin-top: 16px;
+            margin-bottom: 40px;
+        }
+
+
+        .sampul .kotak-tamu p {
+            font-size: 16px;
+            line-height: 26px;
+            margin: 0;
+        }
+
+
+        .sampul .kotak-tamu .nama-tamu {
+            font-size: 18px;
+            ;
+            font-weight: 700;
+            margin-top: 10px;
+        }
+
+
+        .sampul .buka-undangan {
+            font-family: 'Dosis', sans-serif;
+            font-size: 20px;
+            font-weight: bold;
+            color: #F2E8D7;
+            background-color: #414143;
+            border: 2px solid #F2E8D7;
+            border-radius: 30px;
+            padding: 12px 26px;
+            text-decoration: none;
+            transition: .4s;
+        }
+
+
+        .sampul .buka-undangan:hover {
+            background-color: #323234;
+            color: #F2E8D7;
+        }
+
+
+        .sampul .jarak-icon {
+            margin-right: 8px;
+        }
+
+
+        .sampul .copyright {
+            display: block;
+            margin: 0 auto;
+            margin-top: 60px;
+            width: fit-content;
+        }
+
+
+        .sampul .didukung-oleh {
+            font-family: 'Dosis', sans-serif;
+            font-size: 12px;
+            color: #fff;
+            margin-bottom: -12px;
+        }
+
+
+        .sampul .logo-ruang-pengantin {
+            width: 150px;
+        }
+
+        .backsound-control {
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            border: 1px solid #fff;
+            background-color: rgba(0, 0, 0, .1);
+            position: fixed;
+            bottom: 110px;
+            right: 72px;
+            display: flex;
+            align-items: center;
+            z-index: 5;
+        }
+
+
+        .backsound-control img {
+            margin: 0 auto;
+            cursor: pointer;
+        }
+
+        @media screen and (max-width: 767.98px) {
+            .sampul {
+                background-position: center center;
+            }
+
+            .sampul:before {
+                background: linear-gradient(rgb(255, 255, 255, .0), rgb(0, 0, 0, .9));
+            }
+
+            .sampul .the-wedding-of {
+                font-size: 16px;
+                margin-top: 60px;
+            }
+
+
+            .sampul .nama-mempelai {
+                font-size: 46px;
+            }
+
+
+            .sampul .kotak-tamu {
+                width: 250px;
+            }
+
+
+            .sampul .kotak-tamu p {
+                font-size: 14px;
+            }
+
+
+            .sampul .kotak-tamu .nama-tamu {
+                font-size: 16px;
+                font-weight: 700;
+                margin-top: 10px;
+            }
+
+            .backsound-control {
+                right: 20px;
+            }
+        }
+    </style>
+    <style>
+        .terimakasih {
+            background-image: url("{{ asset('img/galeri/gal3.webp') }}");
+        }
+
+        .terimakasih {
+            min-height: 620px;
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-position: center;
+            padding: 80px 0;
+            position: relative;
+            display: flex;
+            align-items: center;
+        }
+
+        .terimakasih:before {
+            content: "";
+            left: 0;
+            right: 0;
+            top: 0;
+            bottom: 0;
+            background-color: rgba(0, 0, 0, .6);
+            /* background: linear-gradient(rgb(0,0,0,.5), rgb(255,255,255,0)); */
+            position: absolute;
+        }
+
+        .terimakasih img {
+            width: 300px;
+        }
+    </style>
 </head>
 
 <body>
+    <div class="sampul" id="sampul">
+        <div class="content-sampul text-center">
+            <h1 class="the-wedding-of"><i>The Wedding of</i></h1>
+            <h1 class="nama-mempelai">Syarah &amp; Donny</h1>
+            <div class="kotak-tamu">
+                <p>Kepada Yth. Bapak/Ibu/Saudara/i</p>
+                <p class="nama-tamu"> {{ app('request')->input('to') }}</p>
+            </div>
+            <a href="#" class="buka-undangan"><i class="fas fa-envelope-open jarak-icon"></i> Buka Undangan</a>
+        </div>
+    </div>
+    <!-- Source Audio -->
+    <audio autoplay loop id="player">
+        <source src="{{ asset('music/Rizky Febian & Mahalini - You are Mine.mp3') }}" type="audio/mpeg">
+    </audio>
+
+
+    <!-- Tombol Play/Pause -->
+    <div class="backsound-control" hidden>
+        <img src="{{ asset('icons/video-pause-button.png') }}" id="btnPause" hidden>
+        <img src="{{ asset('icons/play-button.png') }}" id="btnPlay" hidden>
+    </div>
 
     <main>
-        <h1 class="visually-hidden">Syarah & Donny</h1>
-
         <section id="header" style="height: 100vh;">
-            <div class="px-4 py-5 my-5 text-center">
-                <img class="d-block mx-auto img-fluid mb-4" src="{{ asset('img/cover-circle-color-resize.png') }}"
+            <div class="px-4 py-5 text-center">
+                <img class="d-block mx-auto img-fluid mb-4" src="{{ asset('img/cover-circle-color-resize.webp') }}"
                     alt="" width="400" height="400">
-                <p class="lead">The Wedding of</p>
+                <p class="lead"><i>The Wedding of</i></p>
                 <h1 class="display-5 fw-bold">Syarah & Donny</h1>
                 <div class="col-lg-6 mx-auto">
                     <p class="lead mb-4">Bekasi, 27 Agustus 2023</p>
@@ -840,9 +1078,9 @@
                             <div class="card-body text-center">
                                 <p class="text-muted"><i>Calon Pengantin Pria</i></p>
                                 <div class="mt-3 mb-4">
-                                    <img src="{{ asset('img/donny-circle-border.png') }}" class="img-fluid" />
+                                    <img src="{{ asset('img/donny-circle-border-1.webp') }}" class="img-fluid" />
                                 </div>
-                                <h4 class="mb-2">Donny Faturrachman</h4>
+                                <h4 class="mb-2"><b>Donny Faturrachman</b></h4>
                                 <p class="text-muted mb-0">Putra dari pasangan:</p>
                                 <p class="text-muted">Bapak Suharyanto & Ibu Tuti Mulyati</p>
                             </div>
@@ -863,9 +1101,9 @@
                             <div class="card-body text-center">
                                 <p class="text-muted"><i>Calon Pengantin Wanita</i></p>
                                 <div class="mt-3 mb-4">
-                                    <img src="{{ asset('img/syarah-cricle-border.png') }}" class="img-fluid" />
+                                    <img src="{{ asset('img/syarah-cricle-border-1.webp') }}" class="img-fluid" />
                                 </div>
-                                <h4 class="mb-2">Syarah Rahmania Zuhri</h4>
+                                <h4 class="mb-2"><b>Syarah Rahmania Zuhri</b></h4>
                                 <p class="text-muted mb-0">Putri dari pasangan:</p>
                                 <p class="text-muted">Bapak Saefuddin & Ibu Pipin Supinah</p>
                             </div>
@@ -895,7 +1133,7 @@
                                 <h4 class="mb-2">Akad Nikah</h4>
                                 <p class="text-muted mb-0">Ahad, 27 Agustus 2023</p>
                                 <p class="text-muted mb-0">(11 Safar 1445 H)</p>
-                                <p class="text-muted">Pukul 08.00 WIB - 09.00 WIB</p>
+                                <p class="text-muted">Pukul 08.00 WIB - 10.00 WIB</p>
                                 <hr>
                                 <p class="text-muted">Gedung Pusdiklat Al-Muhajirien Bekasi Timur</p>
                             </div>
@@ -928,7 +1166,7 @@
 
         <section id="rsvp">
             <div class="px-4 pt-5 my-5 text-center">
-                <h1 class="display-4 fw-bold">RSVP & Guest Book</h1>
+                <h1 class="display-4 fw-bold"><i>RSVP</i> & Ucapan</h1>
             </div>
             <div class="container col-xl-10 col-xxl-8 px-4">
                 <div class="row align-items-center g-lg-5 py-5">
@@ -1091,9 +1329,13 @@
 
         <section id="gift">
             <div class="px-4 pt-5 my-5 text-center">
-                <h1 class="display-4 fw-bold">Wedding Gift</h1>
+                <h1 class="display-4 fw-bold">Hadiah Pernikahan</h1>
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead">Bagi Bapak/Ibu/Saudara/i yang ingin mengirimkan hadiah pernikahan dapat melalui
+                        virtual account di bawah ini:</p>
+                </div>
             </div>
-            <div class="container py-5 h-100">
+            <div class="container h-100">
                 <div class="row d-flex justify-content-center align-items-center h-100">
                     <div class="col-md-12 col-xl-4">
                         <div class="card" style="border-radius: 15px;">
@@ -1106,6 +1348,12 @@
                             </div>
                         </div>
                     </div>
+                </div>
+            </div>
+            <div class="px-4 my-5 text-center">
+                <div class="col-lg-6 mx-auto">
+                    <p class="lead">Sebelumnya, terima kasih atas perhatian dan bentuk tanda kasih
+                        Bapak/Ibu/Saudara/i untuk kami.</p>
                 </div>
             </div>
         </section>
@@ -1121,63 +1369,66 @@
                     <div class="container-galeri">
                         <p>
                         <section class="img-gallery-magnific">
-                            <div class="magnific-img">
-                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal6.jpg') }}"
-                                    title="gal6.jpg">
-                                    <img src="{{ asset('img/galeri/gal6.jpg') }}" alt="gal6.jpg" />
+                            <div class="magnific-img mb-1">
+                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal6.webp') }}"
+                                    title="gal6.webp">
+                                    <img src="{{ asset('img/galeri/gal6.webp') }}" alt="gal6.webp" />
                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <div class="magnific-img">
-                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal1.jpg') }}"
-                                    title="gal1.jpg">
-                                    <img src="{{ asset('img/galeri/gal1.jpg') }}" alt="gal1.jpg" />
+                            <div class="magnific-img mb-1">
+                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal1.webp') }}"
+                                    title="gal1.webp">
+                                    <img src="{{ asset('img/galeri/gal1.webp') }}" alt="gal1.webp" />
                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <div class="magnific-img">
-                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal7.jpg') }}"
-                                    title="gal7.jpg">
-                                    <img src="{{ asset('img/galeri/gal7.jpg') }}" alt="gal7.jpg" />
+                            <div class="magnific-img mb-1">
+                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal7.webp') }}"
+                                    title="gal7.webp">
+                                    <img src="{{ asset('img/galeri/gal7.webp') }}" alt="gal7.webp" />
                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <div class="magnific-img">
-                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal5.jpg') }}"
-                                    title="gal5.jpg">
-                                    <img src="{{ asset('img/galeri/gal5.jpg') }}" alt="gal5.jpg" />
+                            <div class="magnific-img mb-1">
+                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal5.webp') }}"
+                                    title="gal5.webp">
+                                    <img src="{{ asset('img/galeri/gal5.webp') }}" alt="gal5.webp" />
                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <div class="magnific-img">
-                                <a class="image-popup-vertical-fit" href="{{ asset('img/cover.jpg') }}" title="cover.jpg">
-                                    <img src="{{ asset('img/cover.jpg') }}" alt="cover.jpg" />
+                            <div class="magnific-img mb-1">
+                                <a class="image-popup-vertical-fit" href="{{ asset('img/cover.webp') }}"
+                                    title="cover.webp">
+                                    <img src="{{ asset('img/cover.webp') }}" alt="cover.webp" />
                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <div class="magnific-img">
-                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal4.jpg') }}" title="gal4.jpg">
-                                    <img src="{{ asset('img/galeri/gal4.jpg') }}" alt="gal4.jpg" />
+                            <div class="magnific-img mb-1">
+                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal4.webp') }}"
+                                    title="gal4.webp">
+                                    <img src="{{ asset('img/galeri/gal4.webp') }}" alt="gal4.webp" />
                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <div class="magnific-img">
-                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal8.jpg') }}"
-                                    title="gal8.jpg">
-                                    <img src="{{ asset('img/galeri/gal8.jpg') }}" alt="gal8.jpg" />
+                            <div class="magnific-img mb-1">
+                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal8.webp') }}"
+                                    title="gal8.webp">
+                                    <img src="{{ asset('img/galeri/gal8.webp') }}" alt="gal8.webp" />
                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <div class="magnific-img">
-                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal9.jpg') }}"
-                                    title="gal9.jpg">
-                                    <img src="{{ asset('img/galeri/gal9.jpg') }}" alt="gal9.jpg" />
+                            <div class="magnific-img mb-1">
+                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal9.webp') }}"
+                                    title="gal9.webp">
+                                    <img src="{{ asset('img/galeri/gal9.webp') }}" alt="gal9.webp" />
                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
-                            <div class="magnific-img">
-                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal10.jpg') }}" title="gal10.jpg">
-                                    <img src="{{ asset('img/galeri/gal10.jpg') }}" alt="gal10.jpg" />
+                            <div class="magnific-img mb-1">
+                                <a class="image-popup-vertical-fit" href="{{ asset('img/galeri/gal10.webp') }}"
+                                    title="gal10.webp">
+                                    <img src="{{ asset('img/galeri/gal10.webp') }}" alt="gal10.webp" />
                                     <i class="fa fa-search-plus" aria-hidden="true"></i>
                                 </a>
                             </div>
@@ -1192,13 +1443,16 @@
 
         <div class="b-example-divider"></div>
 
-        <section id="terimakasih">
-            <div class="px-4 pt-5 my-5 text-center">
-                <h1 class="display-4 fw-bold">Terimakasih</h1>
+        <section class="terimakasih text-center" id="terimakasih">
+            <div class="container" style="z-index: 1;">
+                <div class="row">
+                    <div class="col-lg">
+                        <img src="{{ asset('img/thank_you.png') }}" class="img-fluid aos-init aos-animate"
+                            data-aos="fade-up">
+                    </div>
+                </div>
             </div>
         </section>
-
-        <div class="b-example-divider mb-0"></div>
 
         <footer>
             <small>
@@ -1207,7 +1461,14 @@
                 <a href="https://www.flaticon.com/free-icons/couple" title="couple icons">Couple icons created by
                     Hilmy Abiyyu A. - Flaticon</a> /
                 <a href="https://www.hiclipart.com/free-transparent-background-png-clipart-iiaup">Lili Flower Image
-                    From Hiclipart</a>
+                    From Hiclipart</a> /
+                <a href="https://www.flaticon.com/free-icons/pause" title="pause icons">Pause icons created by Freepik
+                    - Flaticon</a> /
+                <a href="https://www.flaticon.com/free-icons/google-play-music" title="google play music icons">Google
+                    play music icons created by IYAHICON - Flaticon</a>
+                <br>
+                <span>Musik Latar Dari <a href="https://www.youtube.com/watch?v=mvvddC6NZT4" target="_blank"
+                        rel="noopener noreferrer">Rizky Febian & Mahalini - You're Mine</a></span>
                 <br>
                 ©
                 <script>
@@ -1225,7 +1486,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/jQuery-Flip/1.1.2/jquery.flip.min.js"></script>
         <script src="{{ asset('js/bootstrap-5.3.0/bootstrap.bundle.min.js') }}"></script>
         <script src="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/src/flipdown.min.js"></script>
-        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js" integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w==" crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
+            integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
+            crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script>
             document.addEventListener('DOMContentLoaded', () => {
 
@@ -1303,6 +1566,100 @@
 
                 });
 
+
+                $(document).ready(function() {
+                    const id = '#sampul';
+
+                    //transition effect
+                    $(id).show();
+                    /* disable scroll */
+                    $('html, body').css({
+                        overflow: 'hidden',
+                        height: '100%'
+                    });
+                    // ketika tombol buka undangan di klik
+                    $('.sampul .buka-undangan').click(function(e) {
+                        //Cancel the link behavior
+                        e.preventDefault();
+                        /* enable scroll */
+                        $('html, body').css({
+                            overflow: 'auto',
+                            height: 'auto'
+                        });
+                        // Pilihan method = .hide(); / fadeOut();
+                        // $('.window').hide();
+                        $('.sampul').fadeOut(1000);
+                    });
+
+
+                    const player = document.getElementById("player");
+                    const btnBacksoundTrigger = document.getElementsByClassName('buka-undangan')[0];
+                    const backsoundControl = document.getElementsByClassName('backsound-control')[0];
+                    const btnPlay = document.getElementById('btnPlay');
+                    const btnPause = document.getElementById('btnPause');
+
+
+                    btnBacksoundTrigger.addEventListener("click", function() {
+                        player.play();
+                        backsoundControl.removeAttribute('hidden');
+                        btnPause.removeAttribute('hidden');
+                    });
+
+
+                    btnPause.addEventListener('click', function() {
+                        player.pause();
+                        btnPause.style.display = 'none';
+                        btnPlay.removeAttribute('hidden');
+                        btnPlay.style.display = 'inline';
+                    });
+
+
+                    btnPlay.addEventListener('click', function() {
+                        player.play();
+                        btnPlay.style.display = 'none';
+                        btnPause.style.display = 'inline';
+                    });
+                });
+            });
+        </script>
+        <script>
+            /* AJAX insert */
+            $(document).ready(function() {
+                $('#butsave').on('click', function() {
+                    var name = $('#name').val();
+                    var email = $('#email').val();
+                    var phone = $('#phone').val();
+                    var city = $('#city').val();
+                    var password = $('#password').val();
+                    if (name != "" && email != "" && phone != "" && city != "") {
+                        /*  $("#butsave").attr("disabled", "disabled"); */
+                        $.ajax({
+                            url: "/userData",
+                            type: "POST",
+                            data: {
+                                _token: $("#csrf").val(),
+                                type: 1,
+                                name: name,
+                                email: email,
+                                phone: phone,
+                                city: city
+                            },
+                            cache: false,
+                            success: function(dataResult) {
+                                console.log(dataResult);
+                                var dataResult = JSON.parse(dataResult);
+                                if (dataResult.statusCode == 200) {
+                                    window.location = "/userData";
+                                } else if (dataResult.statusCode == 201) {
+                                    alert("Error occured !");
+                                }
+
+                            }
+                        });
+                    } else {
+                        alert('Please fill all the field !');
+                    }
+                });
             });
         </script>
     </main>
