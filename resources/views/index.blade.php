@@ -1283,17 +1283,18 @@
             <div class="row align-items-center g-lg-5 py-5">
                 <div class="col-md-10 mx-auto col-lg-8">
                     <section id="content">
-                        @if (isset($dataRsvp) && count($dataRsvp) > 0)
+                        {{-- @if (isset($dataRsvp) && count($dataRsvp) > 0)
                             @foreach ($dataRsvp as $data)
                                 <div class="message-in">
                                     <div class="mi-text">
                                         <h3>{{ $data->nama }} [<small>{{ $data->hubungan }}</small>]</h3>
-                                        <h6>{{ $data->created_at }}</h6>
+                                        <h6>{{ date('d-F-Y H:i',strtotime($data->created_at)) }}</h6>
+                                        <hr>
                                         <p>{!! nl2br(e($data->ucapan)) !!}</p>
                                     </div>
                                 </div>
                             @endforeach
-                        @endif
+                        @endif --}}
                     </section>
                     <section class="paytm-loader"></section>
                 </div>
@@ -1465,6 +1466,7 @@
             integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
         <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
+        <script src="{{ asset('js/moment.min.js') }}"></script>
         <script>
             $('.paytm-loader').hide();
             document.addEventListener('DOMContentLoaded', () => {
@@ -1634,11 +1636,20 @@
                         $('#content').show();
                         let html = '';
                         dataResult.forEach(element => {
+                            let hubungan = element.hubungan;
+                            if (hubungan == null) {
+                                hubungan = '-';
+                            }
+                            let ucapan = element.ucapan;
+                            if (ucapan == null) {
+                                ucapan = '-';
+                            }
                             html = '<div class="message-in">' +
                                 '<div class="mi-text">' +
-                                '<h3>' + element.nama + ' [<small>' + element.hubungan + '</small>]</h3>' +
-                                '<h6>' + element.created_at + '</h6>' +
-                                '<p>' + nl2br(element.ucapan, 'string') + '</p>' +
+                                '<h3>' + element.nama + ' [<small>' + hubungan + '</small>]</h3>' +
+                                '<h6>' + moment(element.created_at).fromNow() + '</h6>' +
+                                '<hr>' +
+                                '<p>' + nl2br(ucapan, 'string') + '</p>' +
                                 '</div>' +
                                 '</div>'
                             $('#content').append(html);
@@ -1655,6 +1666,8 @@
             $(document).ready(function() {
                 if (data_rsvp.length === 0) {
                     $('#content').hide();
+                } else {
+                    refreshComment();
                 }
 
                 $('#butsave').on('click', function(e) {

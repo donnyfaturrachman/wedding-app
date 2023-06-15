@@ -20,12 +20,13 @@ Route::get('/', function () {
     return view('index', ['dataRsvp' => $dataRsvp]);
 });
 
+Route::get('/daftarhadir', function () {
+    $dataRsvp = Rsvps::orderByDesc('id')->get();
+    return view('list', ['dataRsvp' => $dataRsvp]);
+});
+
 /* AJAX */
 Route::group(['prefix' => 'ajax'], function () {
     Route::get('/list', [RsvpController::class, 'list'])->name('ajax.list');
     Route::post('/store', [RsvpController::class, 'store'])->name('ajax.store');
-});
-
-Route::get('/daftarhadir', function () {
-    dd('test');
 });
