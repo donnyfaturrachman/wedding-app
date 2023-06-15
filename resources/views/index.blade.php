@@ -24,6 +24,8 @@
     <meta name="twitter:title" content="Undangan Pernikahan Syarah & Donny Bekasi, 27 Agustus 2023" />
     <meta name="twitter:description" content="Undangan Pernikahan Syarah & Donny Bekasi, 27 Agustus 2023" />
     <meta name="twitter:image" content="{{ asset('img/ogimage.jpg') }}" />
+    <meta name="base-url" content="{{ url('/') }}">
+    <meta name="csrf-token" content="{{ csrf_token() }}">
     <link rel="manifest" href="{{ asset('favicon/site.webmanifest') }}">
 
     <title>Undangan Pernikahan Syarah & Donny</title>
@@ -32,6 +34,7 @@
     <link rel="stylesheet" href="{{ asset('css/bootstrap-5.3.0/bootstrap.min.css') }}">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flipdown@0.3.2/dist/flipdown.min.css"
         integrity="sha256-Ns0hLsJnCW1f44p7eahJRJOeiGt/hstfzjozNFJzGjw=" crossorigin="anonymous">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.min.css">
 
     <style>
         .bd-placeholder-img {
@@ -1016,6 +1019,40 @@
             width: 300px;
         }
     </style>
+    <style>
+        .paytm-loader {
+            color: #002e6e;
+            width: 3px;
+            aspect-ratio: 1;
+            border-radius: 50%;
+            box-shadow: 19px 0 0 7px, 38px 0 0 3px, 57px 0 0 0;
+            transform: translateX(-38px);
+            animation: loader 0.5s infinite alternate linear;
+            -webkit-box-shadow: 19px 0 0 7px, 38px 0 0 3px, 57px 0 0 0;
+            -webkit-transform: translateX(-38px);
+            -webkit-animation: loader 0.5s infinite alternate linear;
+        }
+
+        @keyframes loader {
+            50% {
+                box-shadow: 19px 0 0 3px, 38px 0 0 7px, 57px 0 0 3px;
+            }
+
+            100% {
+                box-shadow: 19px 0 0 0, 38px 0 0 3px, 57px 0 0 7px;
+            }
+        }
+
+        @-webkit-keyframes loader {
+            50% {
+                box-shadow: 19px 0 0 3px, 38px 0 0 7px, 57px 0 0 3px;
+            }
+
+            100% {
+                box-shadow: 19px 0 0 0, 38px 0 0 3px, 57px 0 0 7px;
+            }
+        }
+    </style>
 </head>
 
 <body>
@@ -1235,7 +1272,7 @@
                                 <label class="form-label" for="ucapan">Ucapan dan Doa</label>
                             </div>
                             <small>(*) Wajib Diisi</small>
-                            <button class="w-100 btn btn-lg btn-primary" type="submit">Kirim</button>
+                            <button class="w-100 btn btn-lg btn-primary" type="button" id="butsave">Kirim</button>
                         </form>
                     </div>
                 </div>
@@ -1246,81 +1283,19 @@
             <div class="row align-items-center g-lg-5 py-5">
                 <div class="col-md-10 mx-auto col-lg-8">
                     <section id="content">
-                        <div class="message-in">
-                            <div class="mi-text">
-                                <h3>bashfulfruit</h3>
-                                <h6>today, 4:34pm</h6>
-                                <p>i'm so tired</p>
-                                <p>how's everyone doing?</p>
-                            </div>
-                        </div>
-                        <div class="message-in">
-                            <div class="mo-text">
-                                <h3>northamber</h3>
-                                <h6>today, 4:40pm</h6>
-                                <p>p good. kev & i are gonna be goin grocery shoppin soon. hbu?</p>
-                            </div>
-                        </div>
-                        <div class="message-in">
-                            <div class="mi-text">
-                                <h3>SamDeer</h3>
-                                <h6>today, 4:41pm</h6>
-                                <p>not to get political or anything but what the fuck is broccoli</p>
-                                <p>this is a genuine question</p>
-                            </div>
-                        </div>
-                        <div class="message-in">
-                            <div class="mo-text">
-                                <h3>northamber</h3>
-                                <h6>today, 4:42pm</h6>
-                                <p>sam-</p>
-                            </div>
-                        </div>
-                        <div class="message-in">
-                            <div class="mi-text">
-                                <h3>SpitefulGengar</h3>
-                                <h6>today, 4:42pm</h6>
-                                <p>this sounds more like a cry for help</p>
-                            </div>
-                        </div>
-                        <div class="message-in">
-                            <div class="mi-text">
-                                <h3>bashfulfruit</h3>
-                                <h6>today, 4:34pm</h6>
-                                <p>i'm so tired</p>
-                                <p>how's everyone doing?</p>
-                            </div>
-                        </div>
-                        <div class="message-in">
-                            <div class="mo-text">
-                                <h3>northamber</h3>
-                                <h6>today, 4:40pm</h6>
-                                <p>p good. kev & i are gonna be goin grocery shoppin soon. hbu?</p>
-                            </div>
-                        </div>
-                        <div class="message-in">
-                            <div class="mi-text">
-                                <h3>SamDeer</h3>
-                                <h6>today, 4:41pm</h6>
-                                <p>not to get political or anything but what the fuck is broccoli</p>
-                                <p>this is a genuine question</p>
-                            </div>
-                        </div>
-                        <div class="message-in">
-                            <div class="mo-text">
-                                <h3>northamber</h3>
-                                <h6>today, 4:42pm</h6>
-                                <p>sam-</p>
-                            </div>
-                        </div>
-                        <div class="message-in">
-                            <div class="mi-text">
-                                <h3>SpitefulGengar</h3>
-                                <h6>today, 4:42pm</h6>
-                                <p>this sounds more like a cry for help</p>
-                            </div>
-                        </div>
+                        @if (isset($dataRsvp) && count($dataRsvp) > 0)
+                            @foreach ($dataRsvp as $data)
+                                <div class="message-in">
+                                    <div class="mi-text">
+                                        <h3>{{ $data->nama }} [<small>{{ $data->hubungan }}</small>]</h3>
+                                        <h6>{{ $data->created_at }}</h6>
+                                        <p>{!! nl2br(e($data->ucapan)) !!}</p>
+                                    </div>
+                                </div>
+                            @endforeach
+                        @endif
                     </section>
+                    <section class="paytm-loader"></section>
                 </div>
             </div>
         </div>
@@ -1489,7 +1464,9 @@
         <script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"
             integrity="sha512-IsNh5E3eYy3tr/JiX2Yx4vsCujtkhwl7SLqgnwLNgf04Hrt9BT9SXlLlZlWx+OK4ndzAoALhsMNcCmkggjZB1w=="
             crossorigin="anonymous" referrerpolicy="no-referrer"></script>
+        <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.7.12/dist/sweetalert2.all.min.js"></script>
         <script>
+            $('.paytm-loader').hide();
             document.addEventListener('DOMContentLoaded', () => {
 
                 // Unix timestamp (in seconds) to count down to
@@ -1503,7 +1480,11 @@
 
                     // Do something when the countdown ends
                     .ifEnded(() => {
-                        console.log('The countdown has ended!');
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'The countdown has ended!',
+                            text: 'The countdown has ended!'
+                        })
                     });
             });
             // A $( document ).ready() block.
@@ -1623,41 +1604,131 @@
             });
         </script>
         <script>
-            /* AJAX insert */
-            $(document).ready(function() {
-                $('#butsave').on('click', function() {
-                    var name = $('#name').val();
-                    var email = $('#email').val();
-                    var phone = $('#phone').val();
-                    var city = $('#city').val();
-                    var password = $('#password').val();
-                    if (name != "" && email != "" && phone != "" && city != "") {
-                        /*  $("#butsave").attr("disabled", "disabled"); */
-                        $.ajax({
-                            url: "/userData",
-                            type: "POST",
-                            data: {
-                                _token: $("#csrf").val(),
-                                type: 1,
-                                name: name,
-                                email: email,
-                                phone: phone,
-                                city: city
-                            },
-                            cache: false,
-                            success: function(dataResult) {
-                                console.log(dataResult);
-                                var dataResult = JSON.parse(dataResult);
-                                if (dataResult.statusCode == 200) {
-                                    window.location = "/userData";
-                                } else if (dataResult.statusCode == 201) {
-                                    alert("Error occured !");
-                                }
+            function nl2br(str, is_xhtml) {
+                var breakTag = (is_xhtml || typeof is_xhtml === 'undefined') ? '<br />' : '<br>';
+                return (str + '').replace(/([^>\r\n]?)(\r\n|\n\r|\r|\n)/g, '$1' + breakTag + '$2');
+            }
 
-                            }
+            /* clear form */
+            function clearForm() {
+                $('#nama').val('');
+                $('#alamat').val('');
+                $('#nomor_handphone').val('');
+                $('#hubungan').val('');
+                $('#ucapan').val('');
+                $('#content').empty();
+            }
+
+            /* refresh comment */
+            function refreshComment() {
+                $('.paytm-loader').hide();
+                $.ajaxSetup({
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    }
+                });
+                $.ajax({
+                    url: baseUrl + '/ajax/list',
+                    type: "GET",
+                    success: function(dataResult) {
+                        $('#content').show();
+                        let html = '';
+                        dataResult.forEach(element => {
+                            html = '<div class="message-in">' +
+                                '<div class="mi-text">' +
+                                '<h3>' + element.nama + ' [<small>' + element.hubungan + '</small>]</h3>' +
+                                '<h6>' + element.created_at + '</h6>' +
+                                '<p>' + nl2br(element.ucapan, 'string') + '</p>' +
+                                '</div>' +
+                                '</div>'
+                            $('#content').append(html);
                         });
+                    }
+                });
+            }
+
+            /* AJAX insert */
+            const baseUrl = $('meta[name="base-url"]').attr('content');
+            const csrfToken = $('meta[name="csrf-token"]').attr('content');
+            let data_rsvp = @json($dataRsvp);
+
+            $(document).ready(function() {
+                if (data_rsvp.length === 0) {
+                    $('#content').hide();
+                }
+
+                $('#butsave').on('click', function(e) {
+                    e.preventDefault();
+                    var nama = $('#nama').val();
+                    var alamat = $('#alamat').val();
+                    var nomor_handphone = $('#nomor_handphone').val();
+                    var hubungan = $('#hubungan').val();
+                    var ucapan = $('#ucapan').val();
+                    var hadir = $('input[name="hadir"]:checked').val();
+                    var total_hadir = $('input[name="total_hadir"]:checked').val();
+
+                    if (nama != "") {
+                        Swal.fire({
+                            title: 'Apakah Anda Yakin?',
+                            icon: 'warning',
+                            showCancelButton: true,
+                            confirmButtonText: 'Ya',
+                            cancelButtonText: 'Tidak',
+                        }).then((result) => {
+                            if (result.isConfirmed) {
+                                /* disable save button */
+                                $("#butsave").attr("disabled", "disabled");
+                                /* munculkan icon loading di comment section */
+                                $('.paytm-loader').show();
+                                $('#content').hide();
+
+                                $.ajax({
+                                    url: baseUrl + '/ajax/store',
+                                    type: "POST",
+                                    data: {
+                                        _token: csrfToken,
+                                        nama: nama,
+                                        alamat: alamat,
+                                        nomor_handphone: nomor_handphone,
+                                        kehadiran: hadir,
+                                        jumlah_kehadiran: total_hadir,
+                                        hubungan: hubungan,
+                                        ucapan: ucapan
+                                    },
+                                    cache: false,
+                                    success: function(dataResult) {
+                                        var dataResult = JSON.parse(dataResult);
+                                        if (dataResult.statusCode == 200) {
+                                            Swal.fire(
+                                                'Sukses.',
+                                                'Terimakasih Telah Melakukan RSVP.',
+                                                'success'
+                                            ).then((result) => {
+                                                /* remove disable save button */
+                                                $("#butsave").prop("disabled",
+                                                    false);
+                                                /* refresh comment section */
+                                                clearForm();
+                                                refreshComment();
+                                            });
+                                        } else if (dataResult.statusCode == 201) {
+                                            Swal.fire({
+                                                icon: 'error',
+                                                title: 'Ada Eror Sistem.',
+                                                text: dataResult
+                                            })
+                                        }
+
+                                    }
+                                });
+                            }
+                        })
                     } else {
-                        alert('Please fill all the field !');
+                        Swal.fire({
+                            icon: 'error',
+                            title: 'Oops...',
+                            text: 'Mohon Masukan Nama Anda.'
+                        })
                     }
                 });
             });
