@@ -1065,6 +1065,9 @@
                 <p class="nama-tamu"> {{ app('request')->input('to') }}</p>
             </div>
             <a href="#" class="buka-undangan"><i class="fas fa-envelope-open jarak-icon"></i> Buka Undangan</a>
+            <div class="kotak-tamu">
+                <small><i>*Mohon maaf apabila terdapat kesalahan dalam penulisan nama maupun gelar.</i></small>
+            </div>
         </div>
     </div>
     <!-- Source Audio -->
@@ -1212,7 +1215,7 @@
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="nama" name="nama"
                                     placeholder="Nama Lengkap*" required>
-                                <label for="nama">Nama Lengkap <span>*</span></label>
+                                <label for="nama">Nama Lengkap <span class="text-danger">*</span></label>
                             </div>
                             <div class="form-floating mb-3">
                                 <input type="text" class="form-control" id="alamat" name="alamat"
@@ -1271,7 +1274,8 @@
                                     style="height:100%;"></textarea>
                                 <label class="form-label" for="ucapan">Ucapan dan Doa</label>
                             </div>
-                            <small>(*) Wajib Diisi</small>
+                            <p><small>(<span class="text-danger">*</span>) Wajib Diisi</small></p>
+                            <p><small>** Undangan hanya berlaku untuk 2(dua) orang.</small></p>
                             <button class="w-100 btn btn-lg btn-primary" type="button" id="butsave">Kirim</button>
                         </form>
                     </div>
