@@ -1053,6 +1053,23 @@
             }
         }
     </style>
+    <style>
+    .copyButton {
+    padding: 1em;
+    width: 22em;
+    margin-top: 1em;
+    margin-bottom: 1em;
+    font-size: 1.1rem;
+    border: none;
+    background: #0C4D8B;
+    color: white;
+    position: relative;
+    transition: .2s;
+    }
+    .copyButton.active {
+        background: #061A40;
+    }
+    </style>
 </head>
 
 <body>
@@ -1327,13 +1344,16 @@
                                 <h4 class="mb-2">SYARAH RAHMANIA ZUHRI</h4>
                             </div>
                         </div>
+                        <div class="text-center mt-2">
+                            <input type="hidden" value="7391384553" placeholder="Write text to be copied" class="textToBeCopied" />
+                            <button class="w-100 btn btn-lg btn-primary copyButton">Salin Nomor Rekening.</button>
+                        </div>
                     </div>
                 </div>
             </div>
             <div class="px-4 my-5 text-center">
                 <div class="col-lg-6 mx-auto">
-                    <p class="lead">Sebelumnya, terima kasih atas perhatian dan bentuk tanda kasih
-                        Bapak/Ibu/Saudara/i untuk kami.</p>
+                    <p class="lead">Sebelumnya, terima kasih atas perhatian dan bentuk tanda kasih Bapak/Ibu/Saudara/i untuk kami.</p>
                 </div>
             </div>
         </section>
@@ -1749,6 +1769,38 @@
                     }
                 });
             });
+        </script>
+        <script>
+            /* salin rekening */
+            const copyButton = document.querySelector('.copyButton');
+
+            function copyToClipboard(text) {
+                var dummy = document.createElement("textarea");
+                // to avoid breaking orgain page when copying more words
+                // cant copy when adding below this code
+                // dummy.style.display = 'none'
+                document.body.appendChild(dummy);
+                //Be careful if you use texarea. setAttribute('value', value), which works with "input" does not work with "textarea". – Eduard
+                dummy.value = text;
+                dummy.select();
+                document.execCommand("copy");
+                document.body.removeChild(dummy);
+            }
+
+            function afterCopy() {
+                copyButton.classList.remove('active');
+                copyButton.innerHTML = "Salin Nomor Rekening.";
+            }
+
+            copyButton.addEventListener('click', function() {
+                copyButton.classList.add('active');
+                // document.execCommand('copy');
+                copyToClipboard('7391384553');
+                if (this.innerHTML = "Salin Nomor Rekening.") {
+                    this.innerHTML = "Nomor Rekening Tersalin!";
+                    setTimeout(afterCopy, 2000);
+                }
+            })
         </script>
     </main>
 </body>
